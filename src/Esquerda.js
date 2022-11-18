@@ -10,9 +10,11 @@ export default function Esquerda() {
   return (
     <div className="esquerda">
       <Stories />
-      {postValue.map((value) => (
-        <Posts user={value.postUser} content={value.postContent} likes={value.likes} />
-      ))}
+      <div class="posts">
+        {postValue.map((value) => (
+          <Posts user={value.postUser} content={value.postContent} likes={value.likes} />
+        ))}
+      </div>
     </div>
   );
 }
