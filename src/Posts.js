@@ -80,7 +80,7 @@ export default function Posts(props) {
                 name={saved}
                 data-test="save-post"
                 onClick={() =>
-                  saved == "bookmark-outline" ? setSaved("bookmark") : setSaved("bookmark-outline")
+                  saved === "bookmark-outline" ? setSaved("bookmark") : setSaved("bookmark-outline")
                 }
               ></ion-icon>
             </div>

@@ -5,19 +5,28 @@ export default function SidebarUsuario(props) {
   const [userImage, setUserImage] = useState("assets/img/" + props.pagename + ".svg");
   return (
     <div class="usuario" data-test="user">
-      <img src={userImage} data-test="profile-image" onClick={() => {
-        let newImage = prompt("Qual o link da nova imagem de perfil?");
-        setUserImage(newImage);
-      }} />
+      <img
+        src={userImage}
+        data-test="profile-image"
+        onClick={() => {
+          let newImage = prompt("Qual o link da nova imagem de perfil?");
+          if (newImage !== "") {
+            setUserImage(newImage);
+          }
+        }}
+      />
       <div class="texto">
         <strong>{props.pagename}</strong>
         <span data-test="name">
           {user}
           <ion-icon
-            name="pencil" data-test="edit-name"
+            name="pencil"
+            data-test="edit-name"
             onClick={() => {
               let newUser = prompt("Digite um novo usuário");
-              setUser(newUser);
+              if (newUser !== "") {
+                setUser(newUser);
+              }
             }}
           ></ion-icon>
         </span>
