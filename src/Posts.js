@@ -25,7 +25,7 @@ export default function Posts(props) {
       <div class="post" data-test="post">
         <div class="topo">
           <div class="usuario">
-            <img src={`assets/img/${props.user}.svg`} data-test="post-image"/>
+            <img src={`assets/img/${props.user}.svg`} />
             {props.user}
           </div>
           <div class="acoes">
@@ -36,6 +36,7 @@ export default function Posts(props) {
         <div class="conteudo">
           <img
             src={props.content}
+            data-test="post-image"
             onDoubleClick={() => {
               if (finishAnimation === true) {
                 setLiked("heart");
@@ -89,7 +90,7 @@ export default function Posts(props) {
           <div class="curtidas">
             <img src="assets/img/respondeai.svg" />
             <div class="texto">
-              Curtido por <strong>respondeai</strong> e{" "}
+              Curtido por <strong>{props.likedby}</strong> e{" "}
               <strong data-test="likes-number">outras {likes.toLocaleString("pt-BR")} pessoas</strong>
             </div>
           </div>
